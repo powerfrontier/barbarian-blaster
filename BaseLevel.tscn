@@ -102,7 +102,7 @@ path_joined = false
 transform = Transform3D(0.151116, 0, -0.988474, 0, 0.999982, 0, 0.988487, 0, 0.151114, -21, 0, 6)
 
 [node name="Enemy2" parent="Path3D" instance=ExtResource("2_cbias")]
-transform = Transform3D(-0.0331728, 0.00510099, -0.999394, 0.000519355, 0.999969, 0.00508644, 0.99942, -0.000350327, -0.0331746, -16.0025, -0.0240792, 6.07175)
+transform = Transform3D(-0.0331728, 0.00510099, -0.999394, 0.000519354, 0.999969, 0.00508644, 0.99942, -0.000350327, -0.0331746, -16.0025, -0.0240792, 6.07175)
 progress = 5.0
 
 [node name="Enemy3" parent="Path3D" instance=ExtResource("2_cbias")]

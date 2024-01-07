@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	var mouse_position: Vector2 = get_viewport().get_mouse_position()
 	ray_cast_3d.target_position = project_local_ray_normal(mouse_position) * 100
 	ray_cast_3d.force_raycast_update()
-	printt(ray_cast_3d.get_collider(), ray_cast_3d.get_collision_point())
+	#printt(ray_cast_3d.get_collider(), ray_cast_3d.get_collision_point())
 	
 	if ray_cast_3d.is_colliding():
 		var collider = ray_cast_3d.get_collider()
