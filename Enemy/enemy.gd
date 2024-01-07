@@ -1,6 +1,6 @@
 extends PathFollow3D
 
-@export var speed: float = 20.5
+@export var speed: float = 2.5
 
 @onready var base = get_tree().get_first_node_in_group("base")
 
