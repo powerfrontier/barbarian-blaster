@@ -5,12 +5,15 @@ extends PathFollow3D
 
 var current_health: int:
 	set(health):
+		if health < current_health:
+			animation_player.play("TakeDamage")
 		current_health = health
 		#print(current_health)
 		if current_health < 1:
 			queue_free()
 
 @onready var base = get_tree().get_first_node_in_group("base")
+@onready var animation_player = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
