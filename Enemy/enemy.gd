@@ -2,6 +2,7 @@ extends PathFollow3D
 
 @export var speed: float = 2.5
 @export var max_health: int = 50
+@export var gold_earned_per_barbarian: int = 15
 
 var current_health: int:
 	set(health):
@@ -10,10 +11,12 @@ var current_health: int:
 		current_health = health
 		#print(current_health)
 		if current_health < 1:
+			bank.gold += gold_earned_per_barbarian
 			queue_free()
 
 @onready var base = get_tree().get_first_node_in_group("base")
 @onready var animation_player = $AnimationPlayer
+@onready var bank = get_tree().get_first_node_in_group("bank")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
