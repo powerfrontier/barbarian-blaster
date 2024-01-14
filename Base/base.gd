@@ -17,7 +17,7 @@ var current_health: int:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_health = max_health
+	Engine.time_scale = 5
 
 func take_damage() -> void:
-	print("damage taken!")
 	current_health -= 1
