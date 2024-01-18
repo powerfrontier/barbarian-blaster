@@ -1,6 +1,6 @@
 extends Area3D
 
-@export var speed: float = 20.0
+@export var speed: float = 30.0
 @export var damage: int = 25
 var direction: Vector3 = Vector3.FORWARD
 

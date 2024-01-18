@@ -11,7 +11,7 @@ point_count = 2
 [sub_resource type="Curve" id="Curve_io1vu"]
 min_value = 10.0
 max_value = 150.0
-_data = [Vector2(0, 10), 0.0, 140.0, 0, 1, Vector2(1, 150), 140.0, 0.0, 1, 0]
+_data = [Vector2(0, 42.3077), 0.0, 107.692, 0, 1, Vector2(1, 150), 107.692, 0.0, 1, 0]
 point_count = 2
 
 [node name="DifficultyManager" type="Node"]
