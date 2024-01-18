@@ -1,14 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyilxrg4sjpyl"]
+[gd_scene load_steps=9 format=3 uid="uid://cyilxrg4sjpyl"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_n4brh"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_fk5l6"]
-radius = 1.0
-height = 3.0
+[ext_resource type="PackedScene" uid="uid://bnbe5vaqli4y0" path="res://Assets/Barbarian.glb" id="2_0j22c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tt0ur"]
 no_depth_test = true
 shading_mode = 0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fk5l6"]
+radius = 1.0
+height = 3.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_50ccp"]
 radius = 1.0
@@ -53,12 +54,9 @@ _data = {
 
 [node name="Enemy" type="PathFollow3D"]
 transform = Transform3D(0.999971, 0, 0, 0, 0.999982, 0, 0, 0, 0.999958, 0, 0, 0)
+use_model_front = true
 loop = false
 script = ExtResource("1_n4brh")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 1.5, 0)
-mesh = SubResource("CapsuleMesh_fk5l6")
 
 [node name="DamageHilight" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 1.5, 0)
@@ -76,3 +74,32 @@ shape = SubResource("CapsuleShape3D_50ccp")
 libraries = {
 "": SubResource("AnimationLibrary_itbuo")
 }
+
+[node name="Barbarian" parent="." instance=ExtResource("2_0j22c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+
+[node name="Skeleton3D" parent="Barbarian/Armature" index="0"]
+bones/0/position = Vector3(2.37802e-15, -0.419783, 0.391841)
+bones/0/rotation = Quaternion(0.126025, -0.0403579, 0.00513131, 0.991193)
+bones/1/rotation = Quaternion(-0.0867336, -0.0939546, 0.0139671, 0.991693)
+bones/2/rotation = Quaternion(0.00291669, 0.0787525, -0.601163, 0.795231)
+bones/3/rotation = Quaternion(0.261764, -0.289389, -0.566301, 0.725973)
+bones/4/rotation = Quaternion(0.519617, 0.12347, -0.308202, 0.787252)
+bones/6/rotation = Quaternion(0.0407583, 0.10782, 0.00276297, 0.993331)
+bones/7/rotation = Quaternion(-0.0998947, -0.212419, 0.584011, 0.777065)
+bones/8/rotation = Quaternion(-0.0310279, -0.482977, 0.464034, 0.741919)
+bones/9/rotation = Quaternion(0.557384, 0.218879, 0.152004, 0.786327)
+bones/10/position = Vector3(-4.47035e-08, -0.419783, 0.391841)
+bones/10/rotation = Quaternion(0.565961, 0.367755, 0.593702, -0.438135)
+bones/11/rotation = Quaternion(-0.532602, 0.0921202, 0.101313, 0.835215)
+bones/12/rotation = Quaternion(-0.130127, -0.0276167, 0.654494, 0.744273)
+bones/13/rotation = Quaternion(-0.00844364, -0.0494643, -0.643228, 0.764028)
+bones/14/position = Vector3(-7.45058e-08, -0.419783, 0.391841)
+bones/14/rotation = Quaternion(-0.631146, 0.239186, 0.6732, 0.302069)
+bones/15/rotation = Quaternion(-0.394201, 0.182378, 0.283279, 0.855042)
+bones/16/rotation = Quaternion(-0.027108, -0.00238988, -0.00268191, 0.999626)
+
+[node name="AnimationPlayer" parent="Barbarian" index="1"]
+autoplay = "Run"
+
+[editable path="Barbarian"]
